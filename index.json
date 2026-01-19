@@ -1,0 +1,14 @@
+---
+layout: null
+---
+[
+{% assign audio_files = site.static_files | where_exp: "file", "file.extname == '.m4a'" %}
+{% for file in audio_files %}
+  {
+    "lemma": "{{ file.basename }}",
+    "path": "https://ithareyfoundation.github.io/LIT-audio{{ file.path }}",
+    "name": "{{ file.name }}",
+    "modified": "{{ file.modified_time | date: '%Y-%m-%d' }}"
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
