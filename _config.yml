@@ -1,0 +1,7 @@
+# _config.yml
+title: LIT Audio Files
+description: Audio recordings for Judean Lexicon
+
+# Important: Include the audio files in Jekyll build
+include:
+  - "*.m4a"
